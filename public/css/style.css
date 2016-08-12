@@ -1,0 +1,163 @@
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: Roboto;
+}
+
+.game{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.hide{ display: none; }
+
+.stats{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	background: #333;
+	color: #fff;
+	align-items: center;
+	padding: 2em;
+	-webkit-font-smoothing: antialiased;
+}
+
+.stats .btn{
+	-webkit-font-smoothing: antialiased;
+}
+
+.stats h1{
+	margin: 0;
+	font-weight: 700;
+}
+
+.turn{
+	margin: 1em 0;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 700;
+}
+
+.team-1{ color: #3a9bdc; }
+.team-2{ color: #e74c3c; }
+
+.id{
+	background: #eee;
+	border: 1px solid #ddd;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.grid{
+	display: flex;
+	flex-direction: column;
+	color: #fff;
+	border-bottom: 1px solid #ddd;
+}
+
+.row{
+	display: flex;
+	flex-direction: row;
+	border-left: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	width: 100%;
+	height: 75px;
+	margin-right: 0 !important;
+	margin-left: 0 !important;
+}
+
+.row:before{ display: none; }
+.row:after{ display: none; }
+
+.cell{
+	width: 75px;
+	height: 100%;
+	background: url('../img/dots.png') #fff no-repeat;
+	border-right: 1px solid #ddd;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cell.changed{ box-shadow: inset 0 0 7px rgba(0,0,0,0.2); }
+
+.cell[data-team="1"]{ background-color: #3a9bdc; }
+.cell[data-team="2"]{ background-color: #e74c3c; }
+
+.cell[data-amount="1"]{ background-position: 0 0; }
+.cell[data-amount="2"]{ background-position: -75px 0; }
+.cell[data-amount="3"]{ background-position: 0 -75px; }
+.cell[data-amount="4"]{ background-position: -75px -75px; }
+
+.cell[data-pos="corner"][data-amount="1"][data-team="2"],
+.cell[data-pos="edge"][data-amount="2"][data-team="2"],
+.cell[data-pos="open"][data-amount="3"][data-team="2"]{
+	-webkit-animation: pulse-red 0.5s infinite;
+}
+
+.cell[data-pos="corner"][data-amount="1"][data-team="1"],
+.cell[data-pos="edge"][data-amount="2"][data-team="1"],
+.cell[data-pos="open"][data-amount="3"][data-team="1"]{
+	-webkit-animation: pulse-blue 0.5s infinite;
+}
+
+@-webkit-keyframes pulse-red {
+	0% {
+		background-color: #e74c3c;
+	}
+	100% {
+		background-color: #c0392b;
+	}
+}
+
+@-webkit-keyframes pulse-blue {
+	0% {
+		background-color: #3a9bdc;
+	}
+	100% {
+		background-color: #2980b9;
+	}
+}
+
+.lobby{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.lobby h1{
+	text-align: center;
+	font-size: 4em;
+}
+
+.game_chat{
+	display: flex;
+	align-items: flex-start;
+}
+
+.chat{
+	display: flex;
+	flex-direction: column;
+	margin-left: 1em;
+}
+
+.chat .messages{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.chat .message{
+
+}
+
+#playlocal{
+	margin-top: 1em;
+}

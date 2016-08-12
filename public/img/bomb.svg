@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="225" height="225">
+	
+	<style>
+		
+		.bomb {
+			fill: black;
+		}
+
+		.top { -webkit-animation: move-up 0.7s 1; }
+		.right { -webkit-animation: move-right 0.7s 1; }
+		.bottom { -webkit-animation: move-down 0.7s 1; }
+		.left { -webkit-animation: move-left 0.7s 1; }
+
+		@-webkit-keyframes move-up {
+			0% { -webkit-transform: translateY(0); }
+			100% { -webkit-transform: translateY(-75px); }
+		}
+
+		@-webkit-keyframes move-right {
+			0% { -webkit-transform: translateX(0); }
+			100% { -webkit-transform: translateX(75px); }
+		}
+
+		@-webkit-keyframes move-down {
+			0% { -webkit-transform: translateY(0); }
+			100% { -webkit-transform: translateY(75px); }
+		}
+
+		@-webkit-keyframes move-left {
+			0% { -webkit-transform: translateX(0); }
+			100% { -webkit-transform: translateX(-75px); }
+		}
+
+	</style>
+
+
+	<circle cx="112.5" cy="112.5" r="10" class="bomb top"></circle>
+	<circle cx="112.5" cy="112.5" r="10" class="bomb right"></circle>
+	<circle cx="112.5" cy="112.5" r="10" class="bomb bottom"></circle>
+	<circle cx="112.5" cy="112.5" r="10" class="bomb left"></circle>
+
+</svg>

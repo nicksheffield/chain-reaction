@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chain Reaction</title>
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="lobby">
+
+		<h1>Chain Reaction</h1>
+
+		<div class="stuff">
+			<p class="connecting">Connecting to socket server...</p>
+
+			<div class="connected hide">
+				<p>Your ID is <input type="text" class="id form-control" disabled style="display: inline-block"></p>
+
+				<input type="text" id="opponent_id" class="form-control"><br>
+				<button id="challenge" class="btn btn-primary">Challenge</button>
+			</div>
+			<button id="playlocal" class="btn btn-success">Play Locally</button>
+		</div>
+	</div>
+	
+	<div class="game hide">
+		<div class="stats">
+			<h1>Chain Reaction</h1>
+
+			<button id="startover" class="btn btn-warning">Start over</button>
+		</div>
+
+		<h2 class="turn yourturn hide">Your turn</h2>
+		<h2 class="turn enemyturn hide">Opponents turn</h2>
+		<h2 class="victory hide">Somebody Wins!</h2>
+
+		<div class="game_chat">
+			<div class="grid"></div>
+			<div class="chat">
+				<div class="messages"></div>
+				<div class="form form-inline">
+					<input type="text" class="message form-control">
+					<button class="btn btn-primary">Send</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="//cdn.socket.io/socket.io-1.0.6.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/svg.js/1.0.1/svg.min.js"></script>
+	<script src="/gsockets/client.js"></script>
+	<script src="js/svg.parser.min.js"></script>
+	<script src="js/svg.import.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
